@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <!-- SEO -->
+  <title>Niyonzima Bana Luc Owen – Web Developer & Cybersecurity Student</title>
+  <meta name="description" content="Official portfolio of Niyonzima Bana Luc Owen – Web Developer and Cybersecurity student. Skilled in full-stack development, ethical hacking, and Linux.">
+  <meta name="keywords" content="Niyonzima Bana Luc Owen, Web Developer, Cybersecurity Student, Full-stack, HTML, CSS, JavaScript, Linux">
+  <meta name="author" content="Niyonzima Bana Luc Owen">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Niyonzima Bana Luc Owen – Web Dev & Cybersecurity">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://niyonzima.dev">
+  <meta property="og:image" content="https://placehold.co/1200x630/0a1929/ffffff?text=Niyonzima+Bana+Owen">
+  <meta property="og:description" content="Building secure, fast, and interactive platforms.">
+  <!-- favicon angel -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😇</text></svg>">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ----- CSS Variables for Light/Dark Modes ----- */
+    :root {
+      --bg-primary: #f5faff;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --text-primary: #0a1e2f;
+      --text-secondary: #1e405e;
+      --text-muted: #2b4b68;
+      --accent-gold: #b8860b;
+      --accent-blue: #0a4b7a;
+      --border-light: #e2ecf9;
+      --shadow-color: rgba(10, 50, 90, 0.1);
+      --navbar-bg: rgba(10, 30, 45, 0.95);
+      --footer-bg: #0a1e2f;
+      --footer-text: #e0eefc;
+      --badge-bg: #e2efff;
+      --badge-text: #0a3e64;
+      --skill-badge-bg: #e7f0fc;
+      --project-tag-bg: #dbbf78;
+      --progress-start: #0a4b7a;
+      --progress-end: #f0c45a;
+    }
+
+    body.dark-mode {
+      --bg-primary: #0a1a2a;
+      --bg-secondary: #132436;
+      --bg-card: #1e3347;
+      --text-primary: #e6f0ff;
+      --text-secondary: #c9ddf5;
+      --text-muted: #aac3db;
+      --accent-gold: #f0c45a;
+      --accent-blue: #4a9fd8;
+      --border-light: #2d4b68;
+      --shadow-color: rgba(0, 0, 0, 0.4);
+      --navbar-bg: rgba(5, 15, 25, 0.98);
+      --footer-bg: #07121f;
+      --footer-text: #b0c9e5;
+      --badge-bg: #1e3b5a;
+      --badge-text: #d4e3ff;
+      --skill-badge-bg: #1e3b5a;
+      --project-tag-bg: #b8860b;
+      --progress-start: #f0c45a;
+      --progress-end: #4a9fd8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      width: 100%;
+      transition: background-color 0.3s ease, color 0.2s ease;
+    }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 80px;
+      height: 5px;
+      background: var(--accent-blue);
+      border-radius: 3px;
+    }
+
+    /* progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--progress-start), var(--progress-end));
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+
+    /* navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: var(--navbar-bg);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 0.9rem 0;
+      z-index: 99;
+      width: 100%;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #fad275);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo i {
+      font-size: 2rem;
+      -webkit-text-fill-color: initial;
+      color: #fad275;
+      animation: float 3s ease-in-out infinite;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .nav-links a i { font-size: 1.1rem; transition: transform 0.2s; }
+    .nav-links a:hover {
+      border-bottom-color: var(--accent-gold);
+      color: #ffecb3;
+    }
+    .nav-links a:hover i { transform: translateY(-3px) rotate(5deg); }
+
+    .theme-toggle {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-left: 1rem;
+    }
+    .theme-toggle:hover {
+      background: var(--accent-gold);
+      transform: rotate(30deg) scale(1.1);
+    }
+
+    /* floating icons */
+    .floating-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .floating-icons i {
+      position: absolute;
+      color: rgba(10, 75, 122, 0.06);
+      font-size: 3rem;
+      animation: float 8s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3rem 0 5rem 0;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+    .hero-content h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 0.5rem; }
+    .hero-name {
+      color: var(--accent-gold);
+      border-bottom: 4px solid var(--accent-gold);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    
+    .typing-container {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin: 1.5rem 0 1.5rem;
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+    }
+    #typed-output {
+      display: inline-block;
+      font-weight: 600;
+      color: var(--accent-gold);
+      border-right: 3px solid var(--accent-gold);
+      padding-right: 5px;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: var(--accent-gold); }
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .profile-frame {
+      background: var(--bg-card);
+      border-radius: 40px;
+      padding: 1.2rem;
+      box-shadow: 0 35px 60px -20px var(--shadow-color);
+      max-width: 100%;
+      border: 3px solid var(--bg-secondary);
+      animation: profile-glow 4s infinite alternate;
+    }
+    @keyframes profile-glow {
+      0% { box-shadow: 0 20px 40px -15px var(--accent-blue); }
+      100% { box-shadow: 0 30px 60px -10px var(--accent-gold); }
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 30px;
+      display: block;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border: 4px solid var(--bg-secondary);
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .badge {
+      background: var(--badge-bg);
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      color: var(--badge-text);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+    .badge i { font-size: 1.2rem; color: var(--accent-gold); }
+    .badge:hover { background: var(--accent-gold); color: #0a1e2f; transform: scale(1.05); }
+    .badge:hover i { color: #0a1e2f; }
+
+    /* ABOUT - detailed */
+    .about-card {
+      background: var(--bg-card);
+      border-radius: 50px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px -12px var(--shadow-color);
+      font-size: 1.15rem;
+      border-left: 12px solid var(--accent-gold);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card:hover { transform: translateY(-8px); }
+    .about-card p { margin-bottom: 1.5rem; }
+    .about-card i.fa-angel {
+      position: absolute;
+      bottom: -15px;
+      right: 20px;
+      font-size: 8rem;
+      color: var(--accent-gold);
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    .about-highlight {
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    /* SKILLS - with descriptions */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .skill-card {
+      background: var(--bg-card);
+      border-radius: 50px;
+      padding: 2.5rem;
+      box-shadow: 0 15px 30px -10px var(--shadow-color);
+      transition: all 0.3s;
+    }
+    .skill-card:hover { transform: translateY(-12px) scale(1.01); }
+    .skill-card h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-primary);
+    }
+    .skill-card h3 i { color: var(--accent-gold); font-size: 2.5rem; }
+    .skill-description {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin-top: 1rem;
+    }
+    .skill-badge {
+      background: var(--skill-badge-bg);
+      color: var(--text-primary);
+      padding: 0.7rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .skill-badge:hover {
+      background: var(--accent-gold);
+      transform: translateY(-4px);
+      color: #0a1e2f;
+    }
+
+    /* PROJECTS - with detailed descriptions */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 50px;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 20px 30px -8px var(--shadow-color);
+      transition: all 0.25s;
+      border-bottom: 6px solid transparent;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .project-card:hover {
+      border-bottom-color: var(--accent-gold);
+      transform: scale(1.02) translateY(-10px);
+      box-shadow: 0 30px 40px -12px var(--accent-gold);
+    }
+    .project-card i {
+      font-size: 3.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+    }
+    .project-card:hover i { transform: translateY(-10px) rotate(5deg); color: var(--accent-blue); }
+    .project-card h4 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+    .project-description {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .tech-tag {
+      background: var(--skill-badge-bg);
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-blue);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 500;
+      transition: all 0.3s;
+      font-size: 0.95rem;
+    }
+    .project-btn i { font-size: 1.1rem; color: white; transition: 0.2s; margin-bottom: 0; }
+    .project-btn:hover {
+      background: var(--accent-gold);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px -8px var(--accent-gold);
+    }
+    .project-btn:hover i { transform: translateX(5px); }
+
+    /* CONTACT - detailed with Netlify Forms */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      background: var(--bg-card);
+      border-radius: 60px;
+      padding: 3.5rem;
+      box-shadow: 0 25px 45px -15px var(--shadow-color);
+    }
+    .contact-info h3, .contact-form h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-primary);
+    }
+    .contact-info h3 i, .contact-form h3 i { color: var(--accent-gold); }
+    .contact-description {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      word-break: break-word;
+      color: var(--text-secondary);
+    }
+    .contact-item i {
+      width: 52px;
+      height: 52px;
+      background: var(--accent-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .contact-item:hover i { background: var(--accent-gold); transform: rotate(360deg) scale(1.1); }
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin: 2.5rem 0 1rem;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      background: var(--badge-bg);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--accent-blue);
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      background: var(--accent-gold);
+      color: white;
+      transform: translateY(-8px) rotate(5deg);
+    }
+    /* Netlify Form Styles */
+    .form-group { margin-bottom: 1.8rem; }
+    input, textarea {
+      width: 100%;
+      padding: 1.1rem 1.8rem;
+      border: 2px solid var(--border-light);
+      border-radius: 60px;
+      font-size: 1rem;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    textarea { border-radius: 30px; resize: vertical; min-height: 140px; }
+    input:focus, textarea:focus {
+      border-color: var(--accent-gold);
+      outline: none;
+      box-shadow: 0 0 0 5px rgba(184,134,11,0.15);
+    }
+    .btn-submit {
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      padding: 1.1rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: 0.2s;
+      width: auto;
+    }
+    .btn-submit:hover { background: var(--accent-gold); transform: scale(1.02); }
+    
+    /* Form success/error styling (Netlify handles this automatically) */
+    .form-note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .form-note i { color: var(--accent-gold); }
+
+    /* map */
+    .map-container {
+      margin-top: 2.5rem;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px -10px var(--shadow-color);
+      border: 3px solid var(--bg-secondary);
+      transition: 0.3s;
+    }
+    .map-container:hover { transform: scale(1.01); box-shadow: 0 25px 40px -10px var(--accent-gold); }
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    /* footer */
+    .site-footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 4rem 0 2rem;
+      margin-top: 3rem;
+      transition: background-color 0.3s;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .footer-col h4 {
+      color: var(--accent-gold);
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.8rem; }
+    .footer-col ul li a {
+      color: var(--footer-text);
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-col ul li a:hover {
+      color: var(--accent-gold);
+      transform: translateX(8px);
+    }
+    .footer-news {
+      color: var(--footer-text);
+      margin: 1rem 0;
+      word-break: break-word;
+      line-height: 1.6;
+    }
+    .footer-news i { color: var(--accent-gold); margin-right: 8px; width: 20px; }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #2b4b68;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--footer-text);
+    }
+    .footer-bottom a { color: var(--accent-gold); }
+
+    /* back to top */
+    #topBtn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      background: var(--accent-blue);
+      color: white;
+      border: 3px solid var(--accent-gold);
+      border-radius: 50%;
+      font-size: 2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      z-index: 98;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+    #topBtn.show { opacity: 1; visibility: visible; }
+    #topBtn:hover { background: var(--accent-gold); transform: scale(1.1); }
+
+    /* responsive */
+    @media (max-width: 1024px) { html { font-size: 15px; } }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content { order: 2; }
+      .profile-frame { order: 1; margin-bottom: 1.5rem; }
+      .hero-description { margin-left: auto; margin-right: auto; }
+      .hero-badges { justify-content: center; }
+      .skills-wrapper { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 14px; }
+      .container { padding: 0 1.2rem; }
+      .nav-container { flex-direction: column; gap: 0.5rem; }
+      .nav-links { gap: 0.8rem; font-size: 0.9rem; }
+      .section-title { font-size: 2.2rem; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .typing-container { font-size: 1.3rem; min-height: 2.5rem; }
+      .about-card { padding: 2rem; }
+      .contact-grid { padding: 2rem 1.5rem; }
+      .map-container iframe { height: 280px; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-col ul li a { justify-content: center; }
+      .project-links { flex-direction: column; align-items: stretch; }
+      .project-btn { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <div class="floating-icons">
+    <i class="fas fa-angel" style="top: 15%; left: 5%;"></i>
+    <i class="fas fa-crown" style="bottom: 10%; right: 3%; animation-delay: 1.5s;"></i>
+    <i class="fas fa-shield-halved" style="top: 40%; right: 8%; animation-delay: 2s;"></i>
+    <i class="fas fa-wand-sparkles" style="bottom: 20%; left: 8%; animation-delay: 0.8s;"></i>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="logo"><i class="fas fa-angel"></i> N.B.L.O</span>
+      <div class="nav-links">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user-astronaut"></i> About</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-seedling"></i> Projects</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>HELLO, I'M <span class="hero-name">Niyonzima Bana Luc Owen</span></h1>
+        
+        <div class="typing-container">
+          <span id="typed-output"></span>
+        </div>
+
+        <p class="hero-description">
+          I architect and build secure, high-performance web platforms that merge elegant frontend experiences with robust, defensible backend systems. My dual focus on full-stack development and cybersecurity ensures that every line of code I write is not only functional but resilient against modern threats.
+        </p>
+        <div class="hero-badges">
+          <span class="badge"><i class="fas fa-code"></i> Full‑stack Dev</span>
+          <span class="badge"><i class="fas fa-shield"></i> Cybersecurity</span>
+          <span class="badge"><i class="fas fa-cloud"></i> DevOps</span>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <div class="profile-frame">
+          <img src="images/bana owen.jpg" alt="Niyonzima Bana Luc Owen" class="profile-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT - detailed -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About me</h2>
+      <div class="about-card">
+        <p>I'm <span class="about-highlight">Niyonzima Bana Luc Owen</span>, a passionate web developer and cybersecurity student based in Kigali, Rwanda. My journey into tech began with a curiosity about how things work under the hood, which quickly evolved into a deep fascination with building secure, scalable digital solutions. Today, I specialize in creating full-stack applications that prioritize both user experience and security from the ground up.</p>
+        
+        <p>Over the past several years, I've had the privilege of working with East African startups, nonprofits, and global clients to bring their ideas to life. I believe that great software is born at the intersection of clean code, thoughtful architecture, and a relentless focus on security. Whether it's developing a responsive frontend with React, designing RESTful APIs with Node.js, or hardening a Linux server against intrusion, I approach every project with the same level of dedication and attention to detail.</p>
+        
+        <p>Beyond coding, I'm deeply committed to the cybersecurity community. I spend my free time studying ethical hacking techniques, participating in capture-the-flag competitions, and exploring the latest in network defense. My goal is to help build a safer digital landscape in Africa and beyond, one secure application at a time. I'm currently expanding my expertise into DevSecOps, aiming to integrate security practices seamlessly into CI/CD pipelines.</p>
+        
+        <p>When I'm not in front of a screen, you can find me mentoring aspiring developers, reading about the latest cyber threats, or enjoying the vibrant culture of Kigali. I'm always open to discussing new projects, collaborations, or simply connecting with like-minded individuals.</p>
+        <i class="fas fa-angel"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS - detailed descriptions -->
+  <section id="skills" style="background: var(--bg-primary);">
+    <div class="container">
+      <h2 class="section-title">Skills & expertise</h2>
+      <div class="skills-wrapper">
+        <div class="skill-card">
+          <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+          <p class="skill-description">
+            I craft responsive, performant web applications using modern frameworks and best practices. From pixel-perfect UIs to scalable backend services, I ensure that every layer of the stack is optimized for speed, accessibility, and maintainability.
+          </p>
+          <div class="skill-items">
+            <span class="skill-badge"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3 / SCSS</span>
+            <span class="skill-badge"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+            <span class="skill-badge"><i class="fab fa-react"></i> React & Next.js</span>
+            <span class="skill-badge"><i class="fab fa-node"></i> Node.js / Express</span>
+            <span class="skill-badge"><i class="fas fa-database"></i> MongoDB / PostgreSQL</span>
+            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git & GitHub Actions</span>
+            <span class="skill-badge"><i class="fas fa-cloud"></i> RESTful APIs</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><i class="fas fa-shield-halved"></i> Cybersecurity</h3>
+          <p class="skill-description">
+            Security isn't an afterthought—it's a foundational principle. I apply ethical hacking methodologies to identify vulnerabilities and implement robust defenses. My focus is on building systems that withstand real-world attacks while maintaining usability.
+          </p>
+          <div class="skill-items">
+            <span class="skill-badge"><i class="fas fa-network-wired"></i> Network Security</span>
+            <span class="skill-badge"><i class="fas fa-skull"></i> Ethical Hacking (CEH)</span>
+            <span class="skill-badge"><i class="fab fa-linux"></i> Linux Hardening</span>
+            <span class="skill-badge"><i class="fas fa-key"></i> Cryptography</span>
+            <span class="skill-badge"><i class="fas fa-bug"></i> OWASP Top 10</span>
+            <span class="skill-badge"><i class="fas fa-shield"></i> Penetration Testing</span>
+            <span class="skill-badge"><i class="fas fa-terminal"></i> Bash / Python Scripting</span>
+            <span class="skill-badge"><i class="fas fa-fire"></i> Firewall & IDS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS - with detailed descriptions -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Recent projects</h2>
+      <div class="projects-grid">
+        <!-- Garden Project -->
+        <div class="project-card">
+          <i class="fas fa-seedling"></i>
+          <h4>Garden – Cultivation Learning Platform</h4>
+          <p class="project-description">
+            An interactive web platform designed to guide users from gardening novices to experts. Garden features plant identification tools, personalized seasonal planting calendars, and a community forum where users can share tips and harvest photos. Built with a focus on accessibility and mobile-first design, it serves as a digital companion for urban farmers and rural growers alike.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT Auth</span>
+            <span class="tech-tag">Cloudinary</span>
+          </div>
+          <div class="project-links">
+            <a href="https://niyonzimabanaowen-design.github.io/garden-repository/" target="_blank" rel="noopener" class="project-btn">
+              <i class="fas fa-eye"></i> Live Demo
+            </a>
+            <a href="https://github.com/niyonzimabanaowen-design/garden-repository" target="_blank" rel="noopener" class="project-btn">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+        <!-- YouFit AI Project -->
+        <div class="project-card">
+          <i class="fas fa-robot"></i>
+          <h4>YouFit AI – Virtual Style Assistant</h4>
+          <p class="project-description">
+            YouFit AI leverages computer vision and machine learning to analyze user-uploaded outfit photos and provide instant, personalized style feedback. The app suggests complementary pieces, identifies current trends, and even offers sustainable fashion alternatives. Built with TensorFlow.js for client-side inference and a Flask backend for trend data aggregation, it's a cutting-edge tool for fashion enthusiasts.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">TensorFlow.js</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+          <div class="project-links">
+            <a href="https://your-fit.base44.app/home" target="_blank" rel="noopener" class="project-btn">
+              <i class="fas fa-eye"></i> Live Demo
+            </a>
+            <a href="https://github.com/niyonzima/youfit-ai" target="_blank" rel="noopener" class="project-btn">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+        <!-- AngelSec Project -->
+        <div class="project-card">
+          <i class="fas fa-shield-heart"></i>
+          <h4>AngelSec – SME Security Dashboard</h4>
+          <p class="project-description">
+            AngelSec is a lightweight security dashboard designed for small and medium enterprises that lack dedicated IT security teams. It performs automated vulnerability scans, monitors network traffic for anomalies, and provides plain-English reports with actionable recommendations. The project aims to democratize cybersecurity by making enterprise-grade insights accessible to businesses of all sizes.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Grafana</span>
+            <span class="tech-tag">Nmap</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener" class="project-btn">
+              <i class="fas fa-eye"></i> Live Demo
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="project-btn">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + MAP - with Netlify Forms integration -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact me</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3><i class="fas fa-angel"></i> Let's connect</h3>
+          <p class="contact-description">
+            I'm always excited to discuss new opportunities, collaborate on innovative projects, or simply chat about technology and security. Whether you have a specific project in mind, a question about my work, or just want to say hello, feel free to reach out through any of the channels below. I strive to respond to all inquiries within 24 hours.
+          </p>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span><a href="mailto:niyonzimabanaowen@gmail.com">niyonzimabanaowen@gmail.com</a></span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-instagram"></i>
+            <span><a href="https://www.instagram.com/b.a.n.a_o.w.e.n/" target="_blank">@b.a.n.a_o.w.e.n</a></span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <span><a href="https://github.com/niyonzima" target="_blank">github/niyonzima</a></span>
+          </div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/b.a.n.a_o.w.e.n/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/niyonzima" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/niyonzima-bana-owen/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/niyonzima" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3><i class="fas fa-paper-plane"></i> Send a message</h3>
+          <!-- Netlify Form - submissions go to Netlify dashboard and email -->
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <!-- Required for Netlify Forms -->
+            <input type="hidden" name="form-name" value="contact" />
+            <!-- Honeypot field to prevent spam -->
+            <p class="hidden" style="display: none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your email address" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Tell me about your project, idea, or just what's on your mind..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit"><i class="fas fa-angel"></i> Send Message</button>
+            <div class="form-note">
+              <i class="fas fa-shield-alt"></i> Your information is secure and will never be shared.
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- KING DAVID ACADEMY MAP -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4755!2d30.0622!3d-1.9686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6b2b2b2b2b%3A0x123456789abcdef!2sKing%20David%20Academy%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2s!4v1710000000000" 
+          allowfullscreen="" 
+          loading="lazy" 
+          title="King David Academy, Kigali">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-angel"></i> Niyonzima</h4>
+        <ul>
+          <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+          <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+          <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><i class="fas fa-code"></i> Projects</h4>
+        <ul>
+          <li><a href="https://niyonzimabanaowen-design.github.io/garden-repository/" target="_blank"><i class="fas fa-seedling"></i> Garden</a></li>
+          <li><a href="https://your-fit.base44.app" target="_blank"><i class="fas fa-robot"></i> YouFit AI</a></li>
+          <li><a href="#"><i class="fas fa-shield-heart"></i> AngelSec</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><i class="fas fa-globe"></i> Connect</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/b.a.n.a_o.w.e.n/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://github.com/niyonzima" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/niyonzima-bana-owen/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://twitter.com/niyonzima" target="_blank"><i class="fab fa-twitter"></i> X</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><i class="fas fa-map-pin"></i> Location</h4>
+        <div class="footer-news"><i class="fas fa-angel"></i> Kigali, Rwanda</div>
+        <div class="footer-news"><i class="fas fa-school"></i> King David Academy</div>
+        <div class="footer-news"><i class="fas fa-shield"></i> PGP fingerprint: 3A6F 82C1 9B44 7E90</div>
+        <div class="footer-news"><i class="fas fa-clock"></i> Available for freelance</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Niyonzima Bana Luc Owen — built with 😇 and secure code in Kigali | <a href="#home">Top</a> | <a href="#contact">Hire me</a></p>
+    </div>
+  </footer>
+
+  <button id="topBtn"><i class="fas fa-angel"></i></button>
+
+  <script>
+    (function() {
+      const progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = progress + '%';
+      });
+
+      const topBtn = document.getElementById('topBtn');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 400) topBtn.classList.add('show');
+        else topBtn.classList.remove('show');
+      });
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === "#") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      const typedOutput = document.getElementById('typed-output');
+      const textToType = "Web Developer & Cybersecurity Student";
+      let i = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        if (!typedOutput) return;
+        
+        if (!isDeleting && i <= textToType.length) {
+          typedOutput.textContent = textToType.substring(0, i);
+          i++;
+          if (i > textToType.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 3000);
+            return;
+          }
+        } else if (isDeleting && i >= 0) {
+          typedOutput.textContent = textToType.substring(0, i);
+          i--;
+          if (i < 0) {
+            isDeleting = false;
+            i = 0;
+            setTimeout(typeEffect, 500);
+            return;
+          }
+        }
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+      }
+
+      window.addEventListener('load', () => {
+        setTimeout(typeEffect, 500);
+      });
+
+      const themeToggle = document.getElementById('themeToggle');
+      const icon = themeToggle.querySelector('i');
+      
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
