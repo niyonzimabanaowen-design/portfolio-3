@@ -944,14 +944,8 @@
         <div class="contact-form">
           <h3><i class="fas fa-paper-plane"></i> Send a message</h3>
           <!-- Netlify Form - submissions go to Netlify dashboard and email -->
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <!-- Required for Netlify Forms -->
-            <input type="hidden" name="form-name" value="contact" />
-            <!-- Honeypot field to prevent spam -->
-            <p class="hidden" style="display: none;">
-              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-            
+          <form name="contact" action="https://formsubmit.co/niyonzimabanaowen@gmail.com" target="_blank" method="POST">
+           
             <div class="form-group">
               <input type="text" name="name" placeholder="Your full name" required>
             </div>
@@ -965,6 +959,9 @@
             <div class="form-note">
               <i class="fas fa-shield-alt"></i> Your information is secure and will never be shared.
             </div>
+            <input type="hidden" name="_subject" value="New contact form submission">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
           </form>
         </div>
       </div>
